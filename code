@@ -64,4 +64,14 @@ LEFT JOIN dept_emp AS de
 ON de.emp_no=e.emp_no
 LEFT JOIN departments as dp
 ON de.dept_no=dp.dept_no
-WHERE dept_name = 'Sales' OR  dept_name='Development'   
+WHERE dept_name = 'Sales' OR  dept_name='Development'  
+
+-- SELECT last_name, COUNT(last_name) AS "count"
+-- FROM employees
+-- GROUP BY last_name
+-- ORDER BY "count" DESC;
+SELECT last_name, COUNT(last_name) AS name_count
+FROM employees
+GROUP BY last_name
+ORDER BY COUNT(last_name) DESC;
+
